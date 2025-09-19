@@ -86,7 +86,7 @@ Widget setupServerWidget() => Flexible(
          child: Row(
            crossAxisAlignment: CrossAxisAlignment.center,
            children: [],),
-     );
+     ),
 );
 
     basicWidget() => Row(
