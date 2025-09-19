@@ -78,6 +78,7 @@ class _OnlineStatusWidgetState extends State<OnlineStatusWidget> {
               .marginOnly(left: em),
         );
 
+Widget setupServerWidget() => Flexible(
        child: Offstage(
          offstage: !(!_svcStopped.value &&
              stateGlobal.svcStatus.value == SvcStatus.ready &&
@@ -86,6 +87,7 @@ class _OnlineStatusWidgetState extends State<OnlineStatusWidget> {
            crossAxisAlignment: CrossAxisAlignment.center,
            children: [],),
      );
+);
 
     basicWidget() => Row(
           crossAxisAlignment: CrossAxisAlignment.center,
