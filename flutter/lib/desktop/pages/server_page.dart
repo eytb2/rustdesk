@@ -808,13 +808,20 @@ class _CmControlPanel extends StatelessWidget {
 
   const _CmControlPanel({Key? key, required this.client}) : super(key: key);
 
+  // @override
+  // Widget build(BuildContext context) {
+  //   return client.authorized
+  //       ? client.disconnected
+  //           ? buildDisconnected(context)
+  //           : buildAuthorized(context)
+  //       : buildUnAuthorized(context);
+  // }
   @override
-  Widget build(BuildContext context) {
-    return client.authorized
-        ? client.disconnected
-            ? buildDisconnected(context)
-            : buildAuthorized(context)
-        : buildUnAuthorized(context);
+  Widget build(BuildContext context) { 
+  if(client.authorized){
+    return Offstage();
+  }
+  return buildUnAuthorized(context);
   }
 
   buildAuthorized(BuildContext context) {
