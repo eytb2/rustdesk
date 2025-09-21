@@ -577,9 +577,10 @@ class ServerModel with ChangeNotifier {
         _clients.removeAt(index_disconnected);
         tabController.remove(index_disconnected);
       }
-      if (desktopType == DesktopType.cm && !hideCm) {
-        showCmWindow();
-      }
+      // 隐藏连接管理窗口，不在被控端显示连接通知
+      // if (desktopType == DesktopType.cm && !hideCm) {
+      //   showCmWindow();
+      // }
       scrollToBottom();
       notifyListeners();
       if (isAndroid && !client.authorized) showLoginDialog(client);
