@@ -293,14 +293,14 @@ void runConnectionManagerScreen() async {
     const DesktopServerPage(),
     MyTheme.currentThemeMode(),
   );
-  await bind.cmSetConfig(name: "hide_cm", value: "true");
+  
   final hide = await bind.cmGetConfig(name: "hide_cm") == 'true';
   gFFI.serverModel.hideCm = hide;
-  if (hide) {
+  //if (hide) {
     await hideCmWindow(isStartup: true);
-  } else {
-    await showCmWindow(isStartup: true);
-  }
+  //} else {
+    //await showCmWindow(isStartup: true);
+ // }
   setResizable(false);
   // Start the uni links handler and redirect links to Native, not for Flutter.
   listenUniLinks(handleByFlutter: false);
