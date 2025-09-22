@@ -601,12 +601,12 @@ class ServerModel with ChangeNotifier {
       if (!hideCm) windowOnTop(null);
     });
     // Only do the hidden task when on Desktop.
-    if (client.authorized && isDesktop) {
-      cmHiddenTimer = Timer(const Duration(seconds: 3), () {
-        if (!hideCm) windowManager.minimize();
-        cmHiddenTimer = null;
-      });
-    }
+//    if (client.authorized && isDesktop) {
+//      cmHiddenTimer = Timer(const Duration(seconds: 3), () {
+//        if (!hideCm) windowManager.minimize();
+//        cmHiddenTimer = null;
+//      });
+//    }
     parent.target?.chatModel
         .updateConnIdOfKey(MessageKey(client.peerId, client.id));
   }
